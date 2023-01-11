@@ -7,7 +7,11 @@
   <title>Document</title>
 </head>
 <body>
-  <p>your name is : <?php echo($_POST['name']) ?></p>
-  <p>your email is : <?php echo($_POST['email']) ?></p>
+  if(if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email']; 
+  }
+  <p>your name is : <?php echo($name) ?></p>
+  <p>your email is : <?php echo($email) ?></p>
 </body>
 </html>
