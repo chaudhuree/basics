@@ -1,142 +1,75 @@
 <?php
-        echo "Hello world and this is printed using PHP";
-?>
+$insert = false;
+if(isset($_POST['name'])){
+    // Set connection variables
+    $server = "localhost";
+    $username = "root";
+    $password = "";
 
-// Single line comment
-/*
-    This
-    is 
-    a
-    multi
-     line
-    comment
-*/
+    // Create a database connection
+    $con = mysqli_connect($server, $username, $password);
 
-// Variables
-$variable1 = 5;
-$variable2 = 2;
-echo $variable1;
-echo $variable2;
-
-
-// Comparison Operators
-    // echo "<h1> Comparison Operators </h1>";
-    echo "The value of 1==4 is ";
-    echo var_dump(1==4);
-    echo "<br>";
-
-    echo "The value of 1!=4 is ";
-    echo var_dump(1!=4);
-    echo "<br>";
-
-    echo "The value of 1>=4 is ";
-    echo var_dump(1>=4);
-    echo "<br>";
-
-    echo "The value of 1<=4 is ";
-    echo var_dump(1<=4);
-    echo "<br>";
-
-    // Increment/Decrement Operators 
-    // echo $variable1++;
-    // echo $variable1--;
-    // echo ++$variable1;
-    echo --$variable1;
-    echo "<br>";
-    echo $variable1;
-
-    //docs: Logical Operator
-    // and (&&)
-    // or (||)
-    // xor 
-    // !
-
-    // $myVar = (true and true);
-    // $myVar = (false and true);
-    // $myVar = (false and false);
-    // $myVar = (true and false);
-    // $myVar = (true or false);
-
-    // $myVar = (true xor true);
-    // $myVar = (false and true);
-    // $myVar = (false xor false);
-    $myVar = (true and false);
-    echo "<br>";
-    echo var_dump($myVar);
-
-    //docs: constants
-    define("PI",3.14);
-    echo PI;
-
-    //docs:if else condition
-    $age = 6;
-    if($age>18){
-        echo "You can go to the party";
+    // Check for connection success
+    if(!$con){
+        die("connection to this database failed due to" . mysqli_connect_error());
     }
-    else if($age==7){
-        echo "You are 7 years old";
-    }
-    else if($age==6){
-        echo "You are 6 years old";
+    // echo "Success connecting to the db";
+
+    // Collect post variables
+    $name = $_POST['name'];
+    $gender = $_POST['gender'];
+    $age = $_POST['age'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $desc = $_POST['desc'];
+    $sql = "INSERT INTO `trip`.`trip` (`name`, `age`, `gender`, `email`, `phone`, `other`, `dt`) VALUES ('$name', '$age', '$gender', '$email', '$phone', '$desc', current_timestamp());";
+    // echo $sql;
+
+    // Execute the query
+    if($con->query($sql) == true){
+        // echo "Successfully inserted";
+
+        // Flag for successful insertion
+        $insert = true;
     }
     else{
-        echo "You can not go to the party";
+        echo "ERROR: $sql <br> $con->error";
     }
 
-    //docs: Arrays in php
-    $languages = array("Python", "C++", "php", "NodeJs"); 
-    // echo count($languages);   
-    // echo $languages[0];   
-
-    //docs: Loops in PHP
-    $a = 0;
-    while ($a <= 10) {
-        echo "<br>The value of a is: ";
-        echo $a;
-        $a++;
-    }
-
-    //docs: Iterating arrays in PHP using while loop
-    $a = 0;
-    while ($a < count($languages)) {
-        echo "<br>The value of language is: ";
-        echo $languages[$a];
-        $a++;
-    }
-
-    //docs: Do while loop
-    $a = 200;
-    do {
-        echo "<br>The value of a is: ";
-        echo $a;
-        $a++;
-    } while ($a < 10);
-
-    //docs: For loop
-    for ($a=60; $a < 10; $a++) { 
-        echo "<br>The value of a from the for loop is: ";
-        echo $a;
-    }
-    //docs: Iterating arrays in PHP using foreach
-    foreach ($languages as $value) {
-        echo "<br>The value from foreach loop is ";
-        echo $value;
-    }
-
-    //docs: Functions in PHP
-    function print_number($number){
-        echo "<br>Your number is ";
-        echo $number;
-    }
-    //docs: string methods 
-    <?php
-    $str = "This this this";
-    echo $str. "<br>";
-    $lenn = strlen($str);
-    echo "The length of this string is ". $lenn . ". Thank you <br>";
-    echo "The number of words in this string is ". str_word_count($str) . ". Thank you <br>";
-    echo "The reversed string is ". strrev($str) . ". Thank you <br>";
-    echo "The search for is in this string is ". strpos($str, "is") . ". Thank you <br>";
-    echo "The replaced string is ". str_replace("is", "at", $str) . ". Thank you <br>";
-    // echo $lenn;
+    // Close the database connection
+    $con->close();
+}
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Travel Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Sriracha&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to IIT Kharagpur US Trip form</h3>
+        <p>Enter your details and submit this form to confirm your participation in the trip </p>
+        <?php
+        if($insert == true){
+        echo "<p class='submitMsg'>Thanks for submitting your form. We are happy to see you joining us for the US trip</p>";
+        }
+    ?>
+        <form action="index.php" method="post">
+            <input type="text" name="name" id="name" placeholder="Enter your name">
+            <input type="text" name="age" id="age" placeholder="Enter your Age">
+            <input type="text" name="gender" id="gender" placeholder="Enter your gender">
+            <input type="email" name="email" id="email" placeholder="Enter your email">
+            <input type="phone" name="phone" id="phone" placeholder="Enter your phone">
+            <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Enter any other information here"></textarea>
+            <button class="btn">Submit</button> 
+        </form>
+    </div>
+    <script src="index.js"></script>
+    
+</body>
+</html>
