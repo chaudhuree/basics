@@ -82,3 +82,8 @@ echo $variable2;
     else{
         echo "You can not go to the party";
     }
+
+    //docs: Arrays in php
+    $languages = array("Python", "C++", "php", "NodeJs"); 
+    // echo count($languages);   
+    // echo $languages[0];   
