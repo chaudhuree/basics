@@ -85,3 +85,47 @@ echo $customer1->pay(100);
 echo $customer1->getBalance();
 
 ?>
+
+//docs: access modifiers
+<?php
+class Person3
+{
+  public $name;
+  protected $email;
+  private $age;
+
+  public function __construct($name, $email, $age)
+  {
+    $this->name = $name;
+    $this->email = $email;
+    $this->age = $age;
+  }
+
+  public function greet()
+  {
+    return "Hello, my name is $this->name and I am $this->age";
+  }
+}
+class Person4 extends Person3
+{
+  public function __construct($name, $email, $age)
+  {
+    parent::__construct($name, $email, $age);
+  }
+  public function greet()
+  {
+    // return "Hello, my name is $this->name and I am $this->age";
+  }
+}
+// instantiate a new person object
+$person1 = new Person('John Doe', '
+', 35);
+// echo $person1->name;
+// echo $person1->email;
+// echo $person1->age;
+
+echo $person1->greet();
+?>
+//public can be accessed from anywhere
+//protected can be accessed from within the class and its child classes
+//private can be accessed only from within the class
