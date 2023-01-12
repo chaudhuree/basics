@@ -56,3 +56,32 @@ $person2->name = "sohan";
 $person2->email = 'ch@gmail.com';
 $person2->age = 40;
 ?>
+
+//docs: inharitance
+<?php
+class Customer extends Person
+{
+  public $balance;
+
+  public function __construct($name, $email, $age, $balance)
+  {
+    parent::__construct($name, $email, $age);
+    $this->balance = $balance;
+  }
+
+  public function pay($amount)
+  {
+    return $this->name . ' paid $' . $amount;
+  }
+
+  public function getBalance()
+  {
+    return $this->balance;
+  }
+}
+
+$customer1 = new Customer('John Doe', 'jd@gmail.com', 35, 300);
+echo $customer1->pay(100);
+echo $customer1->getBalance();
+
+?>
