@@ -42,5 +42,12 @@ class Student
 $student = new Student();
 $student->setName("John", "Doe");
 print_r($student);
+//output:
+// Student Object
+// (
+//     [first_name:Student:private] => John
+//     [last_name:Student:private] => Doe
+// )
+
 
 ?>
