@@ -19,3 +19,29 @@ MyClass::myStaticMethod("hello", "world");
 //output:
 // Static Method myStaticMethod not found. arguments passed were: hello,world
 ?>
+
+<!-- another example -->
+<?php
+class Student
+{
+  private static function hello($value)
+  {
+    echo "hello $value";
+  }
+  public static function __callStatic($method, $arguments)
+  {
+    //   if($method == "hello"){
+    //     self::hello();
+    //   }else{
+    //     echo "method $method not found";
+    //   }
+    // }
+    if (method_exists(__class__, $method)) {
+      call_user_func_array([__class__, $method], $arguments);
+    } else {
+      echo "method $method not found";
+    }
+  }
+}
+Student::hello("sohan");
+?>
