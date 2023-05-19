@@ -36,7 +36,10 @@ is_numeric("3g.45"); // false
 
 // Conversion
 $strNumber = '12.34';
-$number = (float)$strNumber; // Use floatval(), (int), intval()
+$numberFloat = (float)$strNumber; // Use floatval(), (int), intval()
+$convertFloat = floatval($strNumber);
+$numberInt = (int)$strNumber;
+$convertInt = intval($strNumber);
 var_dump($number);
 echo '<br>';
 
@@ -54,5 +57,6 @@ echo "ceil(2.4) " . ceil(2.4) . '<br>';
 // Formatting numbers
 $number = 123456789.12345;
 echo number_format($number, 2, '.', ',') . '<br>';
+// 123,456,789.12
 
 // https://www.php.net/manual/en/ref.math.php
