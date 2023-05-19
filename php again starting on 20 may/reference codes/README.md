@@ -1,10 +1,4 @@
-# PHP Crash Course 2020
 
-## Final version - *All code written during the video is there*
-
-If you are interested to see empty files to following the tutorial switch to `master` branch. 
-
-The video covers all the basic things about PHP. 
 
  - Comments
  - Variables
