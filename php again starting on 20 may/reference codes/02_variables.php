@@ -21,6 +21,21 @@ $isMale = true; // Change into false
 $height = 1.85;
 $salary = null;
 
+//object type
+// class Car{
+//     private $model;
+//     public function setModel($model){
+//         $this -> model = $model;
+//     }
+//     public function getModel(){
+//         return $this -> model;
+//     }
+// }
+// $car1 = new Car();
+// $car1 -> setModel("BMW");
+// echo $car1 -> getModel();
+
+
 // Print the variables. Explain what is concatenation
 echo $name . '<br>';
 echo $age . '<br>';

@@ -6,6 +6,14 @@ $fruits = ["Banana", "Apple", "Orange"];
 // Print the whole array
 echo '<pre>';
 var_dump($fruits); // print_r
+// result: array(3) {
+//   [0]=>
+//   string(6) "Banana"
+//   [1]=>
+//   string(5) "Apple"
+//   [2]=>
+//   string(6) "Orange"
+// }
 echo '</pre>';
 
 // Get element by index
@@ -16,7 +24,7 @@ $fruits[0] = "Peach";
 
 // Check if array has element at index 2
 echo '<pre>';
-var_dump(isset($fruits[2]));
+var_dump(isset($fruits[2])); // true
 echo '</pre>';
 
 // Print the length of the array
@@ -24,8 +32,8 @@ echo count($fruits).'<br>';
 
 // Add element at the end of the array
 $fruits[] = 'Peach';
-echo $fruits[3].'<br>';
-array_push($fruits, 'Foo');
+echo $fruits[3].'<br>'; // Peach
+array_push($fruits, 'Foo'); // same as $fruits[] = 'Foo'
 // Remove element from the end of the array
 array_pop($fruits);
 
