@@ -104,6 +104,7 @@ $person['channel'] = 'TraversyMedia';
 if (!isset($person['address'])){
     $person['address'] = 'Unknown';
 }
+//fn:
 $person['address'] ??= 'Unknown';
 echo $person['address'].'<br>';
 
@@ -124,6 +125,11 @@ echo '</pre>';
 
 // Sorting associative arrays by values, by keys
 ksort($person); // ksort, krsort, asort, arsort
+echo '<pre>';
+var_dump($person);
+echo '</pre>';
+
+asort($person); // ksort, krsort, asort, arsort
 echo '<pre>';
 var_dump($person);
 echo '</pre>';
