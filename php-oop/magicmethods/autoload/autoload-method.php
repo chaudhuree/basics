@@ -12,6 +12,6 @@ spl_autoload_register('autoload');
 //   include strtolower('classes/' . $class . '.php');
 // });
 
-$first = new First();
+(new First)->printName();
 $second = new Second();
 $third = new Third();

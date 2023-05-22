@@ -4,7 +4,10 @@ class First
 {
   public function __construct()
   {
-    echo "First class loaded" . PHP_EOL;;
+    echo "First class loaded" . PHP_EOL;
+  }
+  public function printName(){
+    echo 'hi chaudhuree'.PHP_EOL;
   }
 }
 
