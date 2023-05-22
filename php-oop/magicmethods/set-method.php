@@ -37,8 +37,17 @@ class MyClass
       $this->data[$property] = $value;
     }
   }
+  public  function __get($property)
+  {
+    if (property_exists($this, $property)) {
+      return $this->$property;
+    } else {
+      return $this->data[$property];
+    }
+  }
 }
 
 $obj = new MyClass();
 $obj->nonexistent_property = "some value";
+echo $obj->nonexistent_property; // Outputs "some value"
 ?>
