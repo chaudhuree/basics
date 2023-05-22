@@ -9,19 +9,25 @@ class MyClass
 
   public function __isset($property)
   {
-    echo "Checking if $property is set" . PHP_EOL;
-    return isset($this->$property);
+    if (isset($this->$property)) {
+      echo "Checking if $property is set" . PHP_EOL;
+      return true;
+    } else {
+      echo "Checking if $property is set" . PHP_EOL;
+      return false;
+    }
   }
 }
 
 $obj = new MyClass();
-echo isset($obj->myProperty);
+echo isset($obj->myProperty) . PHP_EOL;
 echo isset($obj->nonexistentProperty);
 
 //output:
-// Checking if myProperty is set
-// Checking if nonexistentProperty is set
+// Checking if myProperty is set 
 // 1
+// Checking if nonexistentProperty is set
+// 0 or blank line
 //
 ?>
 <!-- 
