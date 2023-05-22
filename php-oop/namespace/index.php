@@ -1,5 +1,5 @@
 <?php
-require 'testing.php';
+
 require 'product.php';
 function wow()
 {

@@ -1,6 +1,6 @@
-//type hinting or type declaration
 
 <?php
+//type hinting or type declaration
 function sum(int $a, int $b)
 {
   return $a + $b;
