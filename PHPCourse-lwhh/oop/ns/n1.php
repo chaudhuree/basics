@@ -12,6 +12,7 @@ use \Project\Bike as KPR;
 
 
 $b = new Bike();
+// $b = new \Project\Bike();
 echo $b->getName();
 // as it is in project namespace so it will print KPR
 //upore n1.php er namespace hocce Project
@@ -19,6 +20,7 @@ echo $b->getName();
 // but if i want to print Hornet then i have to use \Motorcycles\Bike
 
 $c = new Motorcycles\Bike();
+// $c = new \Project\Motorcycles\Bike();
 echo $c->getName();
 
 $h = new Hornet();
