@@ -1,0 +1,26 @@
+<?php
+if(!empty($_GET['PageName']))
+{
+/*$PageName=$_GET['PageName'];
+echo $PageName;*/
+$PagesDirectory='Pages Folder';
+$PagesFolder=scandir($PagesDirectory,0);
+//print_r($PagesFolder);
+unset($PagesFolder[0],$PagesFolder[1]);
+//print_r($PagesFolder);
+$PageName=$_GET['PageName'];
+if(in_array($PageName.'.inc.php',$PagesFolder)){
+include($PagesDirectory.'/'.$PageName.'.inc.php');  
+}else
+{
+ echo '<h1 id="request">You are Lost..</h1>';
+echo '<img src="images/Lost.gif" width="680" height="430" alt="action">';
+ echo "<h2 >Page Not Found</h2>";
+}	
+}
+else
+{
+    include($PagesDirectory.'/Home.inc.php');
+}
+ ?>
+ 	

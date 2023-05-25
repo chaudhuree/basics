@@ -1,0 +1,4 @@
+Name: /^[A-Za-z. ]*$/
+Email : /[a-zA-Z0-9._-]{3,}@[a-zA-Z0-9._-]{3,}[.]{1}[a-zA-Z0-9._-]{2,}/
+Website:  /(https:|ftp:)\/\/+[a-zA-Z0-9.\-_\/?\$=&\#\~`!]+\.[a-zA-Z0-9.\-_\/?\$=&\#\~`!]*/
+Reference: http://php.net/manual/en/reference.pcre.pattern.syntax.php

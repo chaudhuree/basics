@@ -1,0 +1,99 @@
+.FieldInfo{
+	color: rgb(251, 174, 44);
+        font-family: Bitter,Georgia,"Times New Roman",Times,serif;
+        font-size: 1em;
+}
+div{
+	width: 500px;
+	margin:0 auto;
+}
+input[type="text"],textarea{
+	border:1px solid dashed;
+	background-color: rgb(221,216,212);
+	width: 480px;
+	padding: .5em;
+	font-size: 1.0em;
+}
+input[type="Submit"]{
+	color: white;
+	font-size: 1.0em;
+	font-family: Bitter,Georgia,Times,"Times New Roman",serif;
+	width: 200px;
+        height: 40px;
+        background-color:  #5D0580;
+        border: 5px solid ;
+        border-bottom-left-radius: 35px;
+        border-bottom-right-radius: 35px;
+        border-top-left-radius: 35px;
+        border-top-right-radius: 35px;
+        border-color: rgb(221,216,212);
+        font-weight: bold;
+        float: left;
+}
+.FieldInfoHeading{
+     color: rgb(251, 174, 44);
+    font-family: Bitter,Georgia,"Times New Roman",Times,serif;
+    font-size: 1.3em;
+}
+.success{
+color: rgb(158, 27, 214);
+font-family: Bitter,Georgia,"Times New Roman",Times,serif;
+font-size: 1.4em;
+font-weight:bold;
+}
+/* Some More Style */
+
+
+.EditButton{
+    background-color:#5D0580;
+    border: 5px solid ;
+        border-color: rgb(221,216,212);
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.1em;
+
+
+
+}
+.DeleteButton{
+    background-color:#f4bbb3;
+    border: 5px solid ;
+        border-color: rgb(221,216,212);
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+
+
+.EditButton:hover{
+    background-color:#35ee31;
+
+}
+.DeleteButton:hover{
+    background-color:#f00000;
+}
+th{
+    font-family: pristina;
+    color:black;
+    background-color: #FAF9FA;
+    font-size: 1.2em;
+
+}
+td{
+    border: 1 px solid;
+    overflow: hidden;
+    width: 70px;
+    text-align: center;
+    color: black;
+    font-family: Bitter,Georgia,Times,"Times New Roman",serif;
+    font-size: 1.0em;
+    padding: 3px;
+}
+tr:hover{
+background-color:#eeeaee;
+}
+#center{
+    width: 500px;
+    margin:0 auto;
+}
