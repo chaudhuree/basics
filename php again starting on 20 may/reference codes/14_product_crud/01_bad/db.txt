@@ -1,0 +1,26 @@
+name: products_crud 
+utf8mb4_unicode_ci
+
+products 6
+id int autoincrement
+title varchar(512)
+description longtext optional
+image varchar(2048) optional
+price decimal(10,2)
+create_dat datetime
+
+id : auto generated
+title:iphone 11 
+
+
+price:2000,
+
+title:galaxy,  
+
+
+price:1800,
+
+title:blackberry
+
+
+price:1600
