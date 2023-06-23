@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($image) {
     if ($product['image']) {
-      unlink($product['image']);
+      unlink($product['image']); // unlink is used to delete the file
     }
     $imagePath = 'images/' . randomString(8) . '/' . $image['name'];
     mkdir(dirname($imagePath));
