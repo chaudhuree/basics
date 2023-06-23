@@ -52,6 +52,10 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC); //it will fetch all data as 
       <?php } ?>
     </tbody>
   </table>
+  <!-- 
+  another way to write foreach in html
+  <?php foreach ($products as $product) : ?>
+  <?php endforeach; ?> -->
 </body>
 
 </html>
