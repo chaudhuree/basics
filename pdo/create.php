@@ -14,7 +14,21 @@ $errors = [];
 $title = '';
 $description = '';
 $price = '';
+// this is for image path which will be stored in the database
+function randomString($n)
+{
+  $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  $str = '';
+  for ($i = 0; $i < $n; $i++) {
+    $index = rand(0, strlen($characters) - 1);
+    // .= is used to add the value to the string
+    // kind of concatenation
+    // $str = $str . $characters[$index];
+    $str .= $characters[$index];
+  }
 
+  return $str;
+}
 // checking if the method is post then do sumbit
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
