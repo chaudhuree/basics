@@ -18,7 +18,8 @@ header('Location: index.php');
 ?>
 
 // codes for delete button
-
+// as the method is post so we will use form
+// add this in connect or show type php file
 <td>
   <form method="post" action="delete.php">
     <input type="hidden" name="id" value="<?php echo $product['id'] ?>" />

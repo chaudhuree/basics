@@ -15,14 +15,8 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC); //it will fetch all data as 
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>php pdo connection and data show</title>
-</head>
+// after getting the data we will show it in html
 
 <body>
   <table>
@@ -57,5 +51,3 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC); //it will fetch all data as 
   <?php foreach ($products as $product) : ?>
   <?php endforeach; ?> -->
 </body>
-
-</html>
