@@ -1,0 +1,1 @@
+Expense: 4750, Category: home rent

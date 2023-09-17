@@ -85,3 +85,11 @@ echo '<br>';
 // 12. Using PHP built-in constants
 echo SORT_ASC.'<br>'; // 4
 echo PHP_INT_MAX.'<br>'; // 9223372036854775807
+
+
+$username = 'sohan';
+
+function displayWelcomeMessage(){
+    global $username;
+    echo 'Welcome to our website, '.$username;
+};

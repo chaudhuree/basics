@@ -1,0 +1,2 @@
+Income: 10000, Category: sallery
+Income: 2000, Category: travel

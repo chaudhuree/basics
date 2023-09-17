@@ -1,5 +1,9 @@
 <?php
 
+/** @var $pdo \PDO */
+//if we donot return from database.php then we have to write this line
+// then we can just write
+// require_once '../../database.php';
 require_once "../../functions.php";
 $pdo = require_once '../../database.php';
 
@@ -37,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $statement->execute();
         header('Location: index.php');
     }
-
 }
 
 ?>
@@ -51,4 +54,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php require_once '../../views/products/form.php' ?>
 
 </body>
+
 </html>
