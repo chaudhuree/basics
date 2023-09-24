@@ -6,3 +6,5 @@ class Bus{
         echo "I am a bus". PHP_EOL;
     }
 }
+
+// $othertesting=new \Other\Other();
